@@ -1,3 +1,10 @@
+<V1.1> 2012.05.26
+Added media upload function.
+This function uses Uploadify and ImageMgick.
+You must install ImageMagic and Imagick.
+
+
+<V1.0> 2012.05.19
 The test12 is emulation code of WordPress.
 Now you can do only get user acount, login, post new article.
 Place 'includes' folder under the document root(htdocs).
