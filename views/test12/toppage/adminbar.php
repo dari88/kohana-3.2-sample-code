@@ -20,8 +20,8 @@
 
 		<li id="wp-admin-bar-comments" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/edit-comments.php" title="0件のコメントが承認待ちです。"><span class="ab-icon"></span><span id="ab-awaiting-mod" class="ab-label awaiting-mod pending-count count-0">0</span></a>		</li>
 		<li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" tabindex="10" aria-haspopup="true" href="/kohana/test12_postnew" title="新規追加"><span class="ab-icon"></span><span class="ab-label">新規</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu">
-		<li id="wp-admin-bar-new-post" class=""><a class="ab-item" tabindex="10" href="/kohana/test12_postnew">投稿</a>		</li>
-		<li id="wp-admin-bar-new-media" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/media-new.php">メディア</a>		</li>
+		<li id="wp-admin-bar-new-post" class=""><a class="ab-item" tabindex="10" href="test12_postnew">投稿</a>		</li>
+		<li id="wp-admin-bar-new-media" class=""><a class="ab-item" tabindex="10" href="/kohana/test12_upload?p=upload">メディア</a>		</li>
 		<li id="wp-admin-bar-new-link" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/link-add.php">リンク</a>		</li>
 
 		<li id="wp-admin-bar-new-page" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/post-new.php?post_type=page">固定ページ</a>		</li>

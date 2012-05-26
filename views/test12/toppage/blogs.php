@@ -16,7 +16,7 @@ foreach ($data as $d) {
                 <span class="sep">投稿日:</span><a href="/kohana/test12?p=<?php echo $blogid ?>" title="" rel="bookmark">
                     <time class="entry-date" datetime="<?php echo $post_date ?>" pubdate><?php echo $post_date ?></time></a>
                 <span class="by--author"> <span class="sep">作成者:</span> <span class="author vcard">
-                        <a class="url fn n" href="/kohana/test12?author=<?php echo $post_author ?>" title="<?php echo $user_login ?> の投稿をすべて表示" rel="author"><?php echo $user_login ?></a></span></span>	
+                        <a class="url fn n" href="/kohana/test12?author=<?php echo $user_login ?>" title="<?php echo $user_login ?> の投稿をすべて表示" rel="author"><?php echo $user_login ?></a></span></span>	
             </div><!-- .entry-meta -->
 
             <div class="comments-link">

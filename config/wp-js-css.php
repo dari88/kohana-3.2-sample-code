@@ -122,6 +122,9 @@ return array
         'tinymce-preinit' => '/includes/wp/includes/js/tinymce/tiny_mce_preinit.js',
         'tinymce-setting' => '/includes/wp/includes/js/tinymce/tiny_mce_setting.js',
         'commonl10n' => '/includes/wp/includes/js/commonl10n.js',
+        'jquery-142min' => '/includes/uploadify/jquery-1.4.2.min.js',
+        'swfobject-uploadify' => '/includes/uploadify/swfobject.js',
+        'jquery-uploadify-v214min' => '/includes/uploadify/jquery.uploadify.v2.1.4.min.js',
     ),
     'css' => array
         (
@@ -140,5 +143,7 @@ return array
         'wp-admin' => '/includes/wp/admin/css/wp-admin.css',
         'wp-jquery-ui-dialog' => '/includes/wp/includes/css/jquery-ui-dialog.css',
         'wp-pointer' => '/includes/wp/includes/css/wp-pointer.css',
+        // Added css
+        'uploadify' => '/includes/uploadify/uploadify.css',
     ),
 );

@@ -3,10 +3,12 @@
 class Contents_Toppage {
 
     static function blogs($page, $author, $p) {
+        
+        $user_ID = Auth_Wplogin::instance()->user_ID($author);
 
         $model = Model::factory('test12_posts');
-        if ($author) {
-            $array = array('post_author' => $author, 'post_status' => 'publish');
+        if ($user_ID) {
+            $array = array('post_author' => $user_ID, 'post_status' => 'publish');
         } elseif ($p) {
             $array = array('ID' => $p, 'post_status' => 'publish');
         } else {

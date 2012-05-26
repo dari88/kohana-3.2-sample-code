@@ -35,7 +35,7 @@
                         <li class="wp-first-item">
                             <a href='edit.php' class="wp-first-item" tabindex="1">投稿一覧</a>
                         </li>
-                        <li class="current"><a href='post-new.php' class="current" tabindex="1">新規追加</a></li>
+                        <li class="current"><a href='test12_postnew' class="current" tabindex="1">新規追加</a></li>
                         <li><a href='edit-tags.php?taxonomy=category' tabindex="1">カテゴリー</a></li>
                         <li><a href='edit-tags.php?taxonomy=post_tag' tabindex="1">タグ</a></li>
                     </ul>
@@ -44,15 +44,15 @@
         </li>
 
         <li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" id="menu-media">
-            <div class='wp-menu-image'><a href='upload.php'><br /></a></div><div class="wp-menu-arrow"><div></div></div><a href='upload.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" tabindex="1" aria-haspopup="true">メディア</a>
+            <div class='wp-menu-image'><a href='/kohana/test12_upload'><br /></a></div><div class="wp-menu-arrow"><div></div></div><a href='/kohana/test12_upload' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" tabindex="1" aria-haspopup="true">メディア</a>
             <div class='wp-submenu'>
                 <div class='wp-submenu-wrap'>
                     <div class='wp-submenu-head'>メディア</div>
                     <ul>
                         <li class="wp-first-item">
-                            <a href='upload.php' class="wp-first-item" tabindex="1">ライブラリ</a>
+                            <a href='/kohana/test12_upload' class="wp-first-item" tabindex="1">ライブラリ</a>
                         </li>
-                        <li><a href='media-new.php' tabindex="1">新規追加</a></li>
+                        <li><a href='/kohana/test12_upload?p=upload' tabindex="1">新規追加</a></li>
                     </ul>
                 </div>
             </div>

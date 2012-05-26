@@ -1,6 +1,4 @@
-<?php
-
-defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') OR die('No direct access allowed.');
 
 class Model_Test12_posts extends Model {
 
@@ -45,6 +43,38 @@ class Model_Test12_posts extends Model {
         return $id;
     }
 
+    public function postnewimages($array) {
+
+        $date = Date::formatted_time();
+        $post = array(
+            'ID' => '',
+            'post_author' => '0',
+            'post_date' => $date,
+            'post_date_gmt' => $date,
+            'extention' => '',
+            'org_name' => '',
+            'uq_name' => '',
+            'tn1_name' => '',
+            'tn2_name' => '',
+            'title' => '',
+            'description' => '',
+            'tn1_img' => '',
+            'tn2_img' => '',
+            'org_img' => '',
+        );
+
+        foreach ($array as $key => $value) {
+            $post[$key] = $value;
+        }
+
+        $id = DB::insert(array_keys($post))
+                ->values($post)
+                ->table('wp332_post_images')
+                ->execute();
+
+        return $id;
+    }
+
     public function selectblogs($array) {
         $select = DB::select('*')
                 ->order_by('ID', 'DESC')
@@ -58,6 +88,29 @@ class Model_Test12_posts extends Model {
         }
 
         return $select->execute();
+    }
+
+    public function selectimage($array) {
+        $select = DB::select('ID', 'post_author', 'post_date', 'post_date_gmt', 'extention', 'org_name', 'uq_name', 'tn1_name', 'tn2_name', 'title', 'description')
+                ->order_by('ID', 'DESC')
+                ->from('wp332_post_images');
+        if ($array) {
+            $select->where_open();
+            foreach ($array as $key => $value) {
+                $select->and_where($key, '=', $value);
+            }
+            $select->where_close();
+        }
+
+        return $select->execute();
+    }
+
+    public function getimage($id, $c) {
+        $select = DB::select('ID', $c)
+                ->where('ID', '=', $id)
+                ->from('wp332_post_images')
+                ->execute();
+        return $select->get($c);
     }
 
     public function id2name($id) {

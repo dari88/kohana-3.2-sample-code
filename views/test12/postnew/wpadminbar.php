@@ -58,7 +58,7 @@
                 <div class="ab-sub-wrapper">
                     <ul id="wp-admin-bar-new-content-default" class="ab-submenu">
                         <li id="wp-admin-bar-new-post" class=""><a class="ab-item" tabindex="10" href="/kohana/test12_postnew">投稿</a>		</li>
-                        <li id="wp-admin-bar-new-media" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/media-new.php">メディア</a>		</li>
+                        <li id="wp-admin-bar-new-media" class=""><a class="ab-item" tabindex="10" href="/kohana/test12_upload?p=upload">メディア</a>		</li>
                         <li id="wp-admin-bar-new-link" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/link-add.php">リンク</a>		</li>
                         <li id="wp-admin-bar-new-page" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/post-new.php?post_type=page">固定ページ</a>		</li>
                         <li id="wp-admin-bar-new-user" class=""><a class="ab-item" tabindex="10" href="http://localhost/wordpress/wp-admin/user-new.php">ユーザー</a>		</li>
