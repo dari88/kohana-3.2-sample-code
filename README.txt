@@ -2,7 +2,7 @@
 Added media upload function.
 This function uses Uploadify and ImageMgick.
 You must install ImageMagic and Imagick.
-
+Image data will be stored in MySQL database by binary code.
 
 <V1.0> 2012.05.19
 The test12 is emulation code of WordPress.
