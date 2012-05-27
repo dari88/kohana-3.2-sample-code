@@ -64,7 +64,7 @@
                 </th>
                 <td class="column-icon media-icon">				
                     <a href="<?php echo "/kohana/test12_mediaview?id=" . $id . "&type=tn2&html=1" ?>" target="_blank" title="大きな画像" >
-                        <img width="100%" height="100%" src="<?php echo "/kohana/test12_mediaview?id=" . $id . "&type=tn1" ?>" class="attachment-80x60" alt="<?php echo $org_name ?>" title="大きな画像" />				
+                        <img  src="<?php echo "/kohana/test12_mediaview?id=" . $id . "&type=tn1" ?>" class="attachment-80x60" alt="<?php echo $org_name ?>" title="大きな画像" />				
                     </a>
 
                 </td>
