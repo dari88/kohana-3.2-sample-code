@@ -69,7 +69,7 @@
             <?php echo $wpadminbar ?>
 
             <link rel='stylesheet' href='/kohana/loadcss?c=1&dir=rtl&AMP;load=wp-jquery-ui-dialog' type='text/css' media='all' />
-            <script type='text/javascript' src='/kohana/loadjs?c=1&load=commonl10n,admin-bar,hoverIntent,common,jquery-color,schedule,wp-ajax-response,suggest,wp-lists,jquery-ui-core,jquery-ui-widget,jquery-ui-mouse,jquery-ui-sortable,postbox,post,thickbox,media-upload,word-count,editor,quicktags,jquery-ui-resizable,jquery-ui-draggable,jquery-ui-button,jquery-ui-position,jquery-ui-dialog,wpdialogs,wplink,wpdialogs-popup,wp-fullscreen,tinymce-preinit,tinymce,tinymce-langs-ja,tinymce-setting'></script>
+            <script type='text/javascript' src='/kohana/loadjs?c=1&load=commonl10n,admin-bar,hoverIntent,common,jquery-color,schedule,wp-ajax-response,autosave,suggest,wp-lists,jquery-ui-core,jquery-ui-widget,jquery-ui-mouse,jquery-ui-sortable,postbox,post,thickbox,media-upload,word-count,editor,quicktags,jquery-ui-resizable,jquery-ui-draggable,jquery-ui-button,jquery-ui-position,jquery-ui-dialog,wpdialogs,wplink,wpdialogs-popup,wp-fullscreen,tinymce-preinit,tinymce,tinymce-options'></script>
 
             <div style="display:none;">
                 <?php echo $form_3 ?>
