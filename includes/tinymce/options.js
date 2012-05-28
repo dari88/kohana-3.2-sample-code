@@ -28,7 +28,7 @@ tinyMCE.init({
     skin_variant : "silver",
 
     // CSS (should be your site CSS)
-    content_css : "http://localhost/includes/tinymce/css/content.css"
+    content_css : "/includes/tinymce/css/content.css"
 
     }
 );
