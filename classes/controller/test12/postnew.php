@@ -24,27 +24,29 @@ class Controller_Test12_postnew extends Controller {
 
             if ($post->check()) {
 
+                $config = HTMLPurifier_Config::createDefault();
+                $purifier = new HTMLPurifier($config);
+                $content = $purifier->purify($posts['content']);
+
                 $post_array = array(
                     'post_author' => $user_ID,
                     'post_title' => $posts['post_title'],
-                    'post_content' => $posts['content'],
+                    'post_content' => $content,
                 );
-                
-                $model->postnew($post_array);
 
+                $model->postnew($post_array);
                 $this->request->redirect('test12');
             }
 
             $errors = $post->errors('test12');
-            $post_title = HTML::chars($_POST['post_title']);
-            $content = $_POST['content'];
+            $post_title = HTML::chars($posts['post_title']);
+            $content = $posts['content'];
+            
         } else {
             $errors = '';
             $post_title = "";
             $content = "";
         }
-
-
 
         $view = view::factory('test12/postnew/postnew');
         $view->errors = $errors;
