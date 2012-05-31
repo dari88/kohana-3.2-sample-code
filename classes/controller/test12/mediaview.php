@@ -10,7 +10,7 @@ class Controller_Test12_mediaview extends Controller {
         $user_ID = Auth_Wplogin::instance()->user_ID($loginuser);
         $id = $_GET['id'];
         $type = $_GET['type'];
-        isset($_GET['html']) ? $html = 1 : $html = NULL;
+        $html = isset($_GET['html']) ? $_GET['html'] : FALSE;
 
         $model = Model::factory('test12_posts');
         $img = $model->getimage($id, $type . '_img');
@@ -28,6 +28,10 @@ class Controller_Test12_mediaview extends Controller {
             echo "<body><image src='test12_mediaview?id={$id}&type={$type}' /><br />{$org_name}</body></html>";
         } else {
             header('Content-type: ' . $content_type[$ext]);
+            header("Accept-Ranges: bytes");
+            header("Content-Length: ".strlen($img));
+            ob_clean();
+            flush();
             print $img;
         }
     }
