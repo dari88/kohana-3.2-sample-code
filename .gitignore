@@ -1,1 +1,5 @@
-/includes/uploadify/nbproject/private/
+/vendor/Zend/
+/cache/
+/i18n/
+/logs/
+!/logs/2012/
