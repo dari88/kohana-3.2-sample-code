@@ -98,8 +98,8 @@
                             <input type="checkbox" name="media[]" value="<?php echo $id ?>" />
                         </th>
                         <td class="column-image media-icon">				
-                            <a href="<?php echo "/kohana/test12_mediaview?id=" . $id . "&type=tn2" ?>" class="thickbox"  rel="mediavew1" title="大きな画像" >
-                                <img  src="<?php echo "/kohana/test12_mediaview?id=" . $id . "&type=tn1" ?>"  alt="<?php echo $org_name ?>" title="<?php echo $org_name ?>" />				
+                            <a href="<?php echo "/kohana/test12_mediaview?id=" . $id . "&type=tn2" ?>" class="thickbox"  rel="mediavew1" title="<?php echo $org_name ?>" >
+                                <img  src="<?php echo "/kohana/test12_mediaview?id=" . $id . "&type=tn1" ?>"  alt="<?php echo $org_name ?>" title="大きな画像" />				
                             </a>
 
                         </td>
