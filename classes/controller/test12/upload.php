@@ -1,4 +1,6 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php
+
+defined('SYSPATH') OR die('No direct access allowed.');
 
 class Controller_Test12_upload extends Controller {
 
@@ -7,20 +9,34 @@ class Controller_Test12_upload extends Controller {
         $loginuser = Auth_Wplogin::instance()->get_user();
         if (!$loginuser)
             $this->request->redirect('test12');
-        isset($_GET['page']) ? $page = $_GET['page'] : $page = NULL;
-        isset($_GET['p']) ? $p = $_GET['p'] : $p = NULL;
+        $page = isset($_GET['page']) ? $_GET['page'] : NULL;
+        $p = isset($_GET['p']) ? $_GET['p'] : NULL;
 
         $user_ID = Auth_Wplogin::instance()->user_ID($loginuser);
+
+        $action = isset($_GET['action']) ? $_GET['action'] : FALSE;
+        if ($action) {
+            if ($action == 'delete') {
+                $model = model::factory('test12_posts');
+                foreach ($_GET['media'] as $id) {
+                    if ($model->getimage($id, 'post_author') == $user_ID) {
+                        $model->deleteimage($id);
+                    } else {
+                        die('Invalid!');
+                    }
+                }
+            }
+        }
 
         $view = view::factory('test12/upload/upload');
         $view->head02 = view::factory('test12/postnew/head02');
         $view->adminmenu = view::factory('test12/postnew/adminmenu');
         $view->help = view::factory('test12/postnew/help');
         $view->screen_option = view::factory('test12/postnew/screen_option');
-        if($p=='upload'){
+        if ($p == 'upload') {
             $view->media = view::factory('test12/postnew/uploadify');
             $view->media->folder = $loginuser;
-        }else{
+        } else {
             $view->media = Contents_Upload::images($page, $user_ID);
         }
         $view->wpadminbar = view::factory('test12/postnew/wpadminbar');

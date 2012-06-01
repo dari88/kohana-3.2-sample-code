@@ -259,7 +259,9 @@
                         <link rel='stylesheet' id='editor-buttons-css'  href='/kohana/loadcss?c=1&dir=rtl&AMP;load=editor-buttons' type='text/css' media='all' />
                         <div id="wp-content-editor-tools" class="wp-editor-tools"><a id="content-html" class="hide-if-no-js wp-switch-editor switch-html" onclick="switchEditors.switchto(this);">HTML</a>
                             <a id="content-tmce" class="hide-if-no-js wp-switch-editor switch-tmce" onclick="switchEditors.switchto(this);">ビジュアル</a>
-                            <div id="wp-content-media-buttons" class="hide-if-no-js wp-media-buttons"><a href="/kohana/test12_mediaupload?TB_iframe=1" class="thickbox add_media" id="content-add_media" title="メディアを追加" onclick="return false;">アップロード/挿入 <img src="/includes/wp/admin/images/media-button.png?ver=20111005" width="15" height="15" /></a></div>
+                            <div id="wp-content-media-buttons" class="hide-if-no-js wp-media-buttons">
+                                <a href="/kohana/test12_mediaupload?TB_iframe=1&width=420&height=320" class="thickbox add_media"  id="content-add_media" title="メディアを追加" onclick="return false;">アップロード/挿入 <img src="/includes/wp/admin/images/media-button.png?ver=20111005" width="15" height="15" /></a>
+                            </div>
                         </div>
                         <div id="wp-content-editor-container" class="wp-editor-container">
                             <textarea class="wp-editor-area" rows="20" tabindex="1" cols="40" name="content" id="content" ><?php echo $content ?></textarea></div>

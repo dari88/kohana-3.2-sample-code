@@ -1,4 +1,6 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php
+
+defined('SYSPATH') OR die('No direct access allowed.');
 
 class Contents_Upload {
 
@@ -18,8 +20,9 @@ class Contents_Upload {
             $page = 1;
         }
 
-        $paginator->setCurrentPageNumber($page);
         $pagecount = $paginator->count();
+        $page = ($page > $pagecount) ? $pagecount : $page;
+        $paginator->setCurrentPageNumber($page);
 
         $op = '';
         if ($author) {
@@ -38,6 +41,7 @@ class Contents_Upload {
         $view = View::factory('test12/upload/media');
         $view->data = $paginator;
         $view->single = FALSE;
+        $view->page = $page;
         $view->firstpage = $firstpage;
         $view->beforepage = $beforepage;
         $view->nextpage = $nextpage;

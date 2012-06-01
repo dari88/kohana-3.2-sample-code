@@ -1,4 +1,6 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php
+
+defined('SYSPATH') OR die('No direct access allowed.');
 
 class Model_Test12_posts extends Model {
 
@@ -111,6 +113,12 @@ class Model_Test12_posts extends Model {
                 ->from('wp332_post_images')
                 ->execute();
         return $select->get($c);
+    }
+
+    public function deleteimage($id) {
+        $delete = DB::delete('wp332_post_images')
+                ->where('id', '=', $id);
+        return $delete->execute();
     }
 
     public function id2name($id) {
