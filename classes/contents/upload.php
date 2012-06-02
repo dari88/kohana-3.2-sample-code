@@ -24,28 +24,14 @@ class Contents_Upload {
         $page = ($page > $pagecount) ? $pagecount : $page;
         $paginator->setCurrentPageNumber($page);
 
-        $op = '';
-        if ($author) {
-            $op = '';
-        }
-        $hp = 'test12_upload';
-        $firstpage = $hp . '?page=1' . $op;
-        $beforepage = $hp . '?page=' . ($page - 1) . $op;
-        $nextpage = $hp . '?page=' . ($page + 1) . $op;
-        $lastpage = $hp . '?page=' . $pagecount . $op;
-        if ($page == 1)
-            $beforepage = $hp . '?page=1' . $op;
-        if ($page == $pagecount)
-            $nextpage = $hp . '?page=' . $pagecount . $op;
+        $url = '/kohana/test12_upload?page=';
+        $pagination = Contents_Pagenation::setup($pagecount, $page, $url, 'pagination/floating');
 
         $view = View::factory('test12/upload/media');
         $view->data = $paginator;
         $view->single = FALSE;
         $view->page = $page;
-        $view->firstpage = $firstpage;
-        $view->beforepage = $beforepage;
-        $view->nextpage = $nextpage;
-        $view->lastpage = $lastpage;
+        $view->pagination = $pagination;
 
         return $view->render();
     }

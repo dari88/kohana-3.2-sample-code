@@ -171,12 +171,7 @@
 </div>
 <?php
 if (!$single) {
-    echo '<br />';
-    echo '<a href=' . $firstpage . '>&lt;&lt;</a>';
-    echo '<a href=' . $beforepage . '>&nbsp;&lt;</a>';
-    echo '　前のページ　　　　　次のページ　';
-    echo '<a href=' . $nextpage . '>&gt;&nbsp;</a>';
-    echo '<a href=' . $lastpage . '>&gt;&gt;</a>';
+echo $pagination;
 }
 ?>
 
