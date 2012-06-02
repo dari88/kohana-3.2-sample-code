@@ -10,13 +10,13 @@ $last = '&nbsp;>>';
 	<?php if ($first_page !== FALSE): ?>
 		<a href="<?php echo $url.$first_page ?>" rel="first"><?php echo $first ?></a>
 	<?php else: ?>
-		<?php echo $first ?>
+		<?php //echo $first ?>
 	<?php endif ?>
 
 	<?php if ($previous_page !== FALSE): ?>
 		<a href="<?php echo $url.$previous_page ?>" rel="prev"><?php echo $prev ?></a>
 	<?php else: ?>
-		<?php echo $prev ?>
+		<?php //echo $prev ?>
 	<?php endif ?>
 
 	<?php for ($i = 1; $i <= $total_pages; $i++): ?>
@@ -32,13 +32,13 @@ $last = '&nbsp;>>';
 	<?php if ($next_page !== FALSE): ?>
 		<a href="<?php echo $url.$next_page ?>" rel="next"><?php echo $next ?></a>
 	<?php else: ?>
-		<?php echo $next ?>
+		<?php //echo $next ?>
 	<?php endif ?>
 
 	<?php if ($last_page !== FALSE): ?>
 		<a href="<?php echo $url.$last_page ?>" rel="last"><?php echo $last ?></a>
 	<?php else: ?>
-		<?php echo $last ?>
+		<?php //echo $last ?>
 	<?php endif ?>
 
 </p><!-- .pagination -->
