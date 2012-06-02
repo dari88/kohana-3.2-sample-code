@@ -24,7 +24,7 @@ class Contents_Upload {
         $page = ($page > $pagecount) ? $pagecount : $page;
         $paginator->setCurrentPageNumber($page);
 
-        $url = '/kohana/test12_upload?page=';
+        $url = '?page=';
         $pagination = Contents_Pagenation::setup($pagecount, $page, $url, 'pagination/floating');
 
         $view = View::factory('test12/upload/media');
