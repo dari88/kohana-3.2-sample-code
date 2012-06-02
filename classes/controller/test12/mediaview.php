@@ -6,11 +6,11 @@ class Controller_Test12_mediaview extends Controller {
 
         $loginuser = Auth_Wplogin::instance()->get_user();
         if (!$loginuser)
-            die();
+            die('Invalid!');
         $user_ID = Auth_Wplogin::instance()->user_ID($loginuser);
-        $id = $_GET['id'];
-        $type = $_GET['type'];
-        isset($_GET['html']) ? $html = 1 : $html = NULL;
+        isset($_GET['id']) ? $id = $_GET['id'] : die('Invalid!');
+        isset($_GET['type']) ? $type = $_GET['type'] : die('Invalid!');
+        $html = isset($_GET['html']) ? 1 : NULL;
 
         $model = Model::factory('test12_posts');
         $img = $model->getimage($id, $type . '_img');
