@@ -1,3 +1,8 @@
+<V1.3>2012.06.07
+
+The name changed to "kohanaPress".
+Added posts operate function.
+
 <V1.2> 2012.06.01
 
 Added media delete function.
