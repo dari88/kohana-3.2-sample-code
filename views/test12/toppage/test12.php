@@ -18,11 +18,17 @@
         <div id="page" class="hfeed">
             <?php echo $header01; ?>
             <div id="main">
-                <?php echo $primary01; ?>
+
+                <div id="primary">
+                    <div id="content" role="main">
+                        <?php echo $article01 ?>
+                    </div><!-- #content -->
+                </div><!-- #primary -->
+
                 <?php echo $secondary01; ?>
             </div><!-- #main -->
             <?php echo $footer01; ?>
         </div><!-- #page -->
-   <?php if ($loginuser) echo $adminbar; ?>
+        <?php if ($loginuser) echo $adminbar; ?>
     </body>
 </html>

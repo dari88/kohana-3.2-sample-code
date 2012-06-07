@@ -1,6 +1,6 @@
         <header id="branding" role="banner">
             <hgroup>
-                <h1 id="site-title"><span><a href="/kohana/test12" title="WordPress" rel="home">WordPress</a></span></h1>
+                <h1 id="site-title"><span><a href="/kohana/test12" title="WordPress" rel="home">kohanaPress</a></span></h1>
                 <h2 id="site-description">Just another WordPress site</h2>
             </hgroup>
 
@@ -18,7 +18,9 @@
                 <h3 class="assistive-text">メインメニュー</h3>
                 <div class="skip-link"><a class="assistive-text" href="#content" title="メインコンテンツへ移動">メインコンテンツへ移動</a></div>
                 <div class="skip-link"><a class="assistive-text" href="#secondary" title="サブコンテンツへ移動">サブコンテンツへ移動</a></div>
-                <div class="menu"><ul><li class="current_page_item"><a href="/kohana/test12" title="ホーム">ホーム</a></li>
-                        <li class="page_item page-item-2"><a href="http://localhost/wordpress/?page_id=2">サンプルページ</a></li></ul></div>
+                <div class="menu">
+                    <ul><li class="current_page_item"><a href="/kohana/test12" title="ホーム">ホーム</a></li>
+                    </ul>
+                </div>
             </nav><!-- #access -->
         </header><!-- #branding -->

@@ -1,3 +1,8 @@
+<?php
+$open = ' wp-has-current-submenu wp-menu-open open-if-no-js ';
+$close = ' wp-not-current-submenu ';
+?>
+
 <div id="adminmenuback"></div>
 <div id="adminmenuwrap">
     <div id="adminmenushadow"></div>
@@ -5,15 +10,15 @@
 
 
         <li class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" id="menu-dashboard">
-            <div class='wp-menu-image'><a href='index.php'><br /></a></div><div class="wp-menu-arrow"><div></div></div><a href='index.php' class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" tabindex="1" aria-haspopup="true">ダッシュボード</a>
+            <div class='wp-menu-image'><a href='/kohana/test12_edit'><br /></a></div><div class="wp-menu-arrow"><div></div></div><a href='/kohana/test12_edit' class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" tabindex="1" aria-haspopup="true">ダッシュボード</a>
             <div class='wp-submenu'>
                 <div class='wp-submenu-wrap'>
                     <div class='wp-submenu-head'>ダッシュボード</div>
                     <ul>
-                        <li class="wp-first-item"><a href='index.php' class="wp-first-item" tabindex="1">ホーム</a></li>
-                        <li><a href='update-core.php' tabindex="1">更新 
-                                <span class='update-plugins count-1' title='1件のプラグイン更新'>
-                                    <span class='update-count'>1</span>
+                        <li class="wp-first-item"><a href='/kohana/test12_edit' class="wp-first-item" tabindex="1">ホーム</a></li>
+                        <li><a href='/kohana/test12_edit' tabindex="1">更新 
+                                <span class='update-plugins count-1' title=''>
+                                    <span class='update-count'>0</span>
                                 </span>
                             </a>
                         </li>
@@ -24,16 +29,16 @@
 
         <li class="wp-not-current-submenu wp-menu-separator"><div class="separator"></div></li>
 
-        <li class="wp-has-submenu wp-has-current-submenu wp-menu-open open-if-no-js menu-top menu-icon-post menu-top-first" id="menu-posts">
-            <div class='wp-menu-image'><a href='edit.php'><br /></a></div>
+        <li class="wp-has-submenu <?php echo ($menu == 'post') ? $open : $close; ?> open-if-no-js menu-top menu-icon-post menu-top-first" id="menu-posts">
+            <div class='wp-menu-image'><a href='/kohana/test12_edit'><br /></a></div>
             <div class="wp-menu-arrow"><div></div></div>
-            <a href='edit.php' class="wp-has-submenu wp-has-current-submenu wp-menu-open open-if-no-js menu-top menu-icon-post menu-top-first" tabindex="1">投稿</a>
+            <a href='/kohana/test12_edit' class="wp-has-submenu <?php echo ($menu == 'post') ? $open : $close; ?> menu-top menu-icon-post menu-top-first" tabindex="1">投稿</a>
             <div class='wp-submenu'>
                 <div class='wp-submenu-wrap'>
                     <div class='wp-submenu-head'>投稿</div>
                     <ul>
                         <li class="wp-first-item">
-                            <a href='edit.php' class="wp-first-item" tabindex="1">投稿一覧</a>
+                            <a href='/kohana/test12_edit' class="wp-first-item" tabindex="1">投稿一覧</a>
                         </li>
                         <li class="current"><a href='test12_postnew' class="current" tabindex="1">新規追加</a></li>
                         <li><a href='edit-tags.php?taxonomy=category' tabindex="1">カテゴリー</a></li>
@@ -43,7 +48,7 @@
             </div>
         </li>
 
-        <li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" id="menu-media">
+        <li class="wp-has-submenu <?php echo ($menu == 'media') ? $open : $close; ?> menu-top menu-icon-media" id="menu-media">
             <div class='wp-menu-image'><a href='/kohana/test12_upload'><br /></a></div><div class="wp-menu-arrow"><div></div></div><a href='/kohana/test12_upload' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" tabindex="1" aria-haspopup="true">メディア</a>
             <div class='wp-submenu'>
                 <div class='wp-submenu-wrap'>

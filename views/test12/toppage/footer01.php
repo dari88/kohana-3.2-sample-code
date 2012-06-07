@@ -3,7 +3,7 @@
 
 
                 <div id="site-generator">
-                    <a href="http://ja.wordpress.org/" title="セマンティックなパブリッシングツール" rel="generator">Proudly powered by WordPress</a>
+                    <a href="http://kohanaframework.org/" title="An elegant HMVC PHP5 framework" rel="generator">Proudly powered by kohana</a>
                 </div>
             </footer><!-- #colophon -->
             

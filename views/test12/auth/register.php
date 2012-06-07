@@ -15,7 +15,20 @@
         </script>
     </head>
     <body class="login">
-        <div id="login"><h1><a href="http://wordpress.org/" title="Powered by WordPress">WordPress</a></h1>
+        <style type="text/css">
+            <!--
+            .login h1 a {
+                background: url("/includes/img/kohana/logo-new.png") no-repeat scroll center top transparent;
+                display: block;
+                height: 67px;
+                overflow: hidden;
+                padding-bottom: 15px;
+                text-indent: -9999px;
+                width: 326px;
+            }
+            -->
+        </style>        
+        <div id="login"><h1><a href="http://kohanaframework.org/" title="Powered by kohana">kohanaPress</a></h1>
             <p class="message register">このブログに登録</p>
 
             <?php

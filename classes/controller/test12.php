@@ -14,10 +14,7 @@ class Controller_Test12 extends Controller {
         $view = view::factory('test12/toppage/test12');
         $view->head01 = view::factory('test12/toppage/head01');
         $view->header01 = view::factory('test12/toppage/header01');
-        $view->primary01 = view::factory('test12/toppage/primary01');
-        $view->primary01->nav_above = view::factory('test12/toppage/nav_above');
-        $view->primary01->article01 = Contents_Toppage::blogs($page, $author, $p);
-        $view->primary01->nav_below = view::factory('test12/toppage/nav_below');
+        $view->article01 = Contents_Toppage::blogs($page, $author, $p);
         $view->secondary01 = view::factory('test12/toppage/secondary01');
         $view->secondary01->search_2 = view::factory('test12/toppage/search_2');
         $view->secondary01->recent_posts_2 = Contents_Toppage::recentposts2();

@@ -1,19 +1,7 @@
 <form name="post" action="" method="post" id="post">
-    <input type="hidden" id="_wpnonce" name="_wpnonce" value="49457e7a3e" />
-    <input type="hidden" name="_wp_http_referer" value="/wordpress/wp-admin/post-new.php" />
-    <input type="hidden" id="user-id" name="user_ID" value="1" />
-    <input type="hidden" id="hiddenaction" name="action" value="editpost" />
-    <input type="hidden" id="originalaction" name="originalaction" value="editpost" />
-    <input type="hidden" id="post_author" name="post_author" value="1" />
-    <input type="hidden" id="post_type" name="post_type" value="post" />
-    <input type="hidden" id="original_post_status" name="original_post_status" value="auto-draft" />
-    <input type="hidden" id="referredby" name="referredby" value="http://localhost/wordpress/" />
-    <input type="hidden" name="_wp_original_http_referer" value="http://localhost/wordpress/" />
-    <input type='hidden' id='auto_draft' name='auto_draft' value='1' />
-    <input type='hidden' id='post_ID' name='post_ID' value='50' />
-    <input type="hidden" id="autosavenonce" name="autosavenonce" value="8e906804c7" />
-    <input type="hidden" id="meta-box-order-nonce" name="meta-box-order-nonce" value="6aec3abd0a" />
-    <input type="hidden" id="closedpostboxesnonce" name="closedpostboxesnonce" value="c7acaae5a7" />
+
+    <input type='hidden' id='post_ID' name='post_ID' value='<?php echo $post_ID ?>' />
+    
     <div id="poststuff" class="metabox-holder has-right-sidebar">
         <div id="side-info-column" class="inner-sidebar">
             <div id="side-sortables" class="meta-box-sortables"><div id="submitdiv" class="postbox " >
@@ -33,108 +21,15 @@
                                         <img src="/includes/wp/admin/images/wpspin_light.gif" class="ajax-loading" id="draft-ajax-loading" alt="" />
                                     </div>
 
-                                    <div id="preview-action">
-                                        <a class="preview button" href="http://localhost/wordpress/?p=50&#038;preview=true" target="wp-preview" id="post-preview" tabindex="4">プレビュー</a>
-                                        <input type="hidden" name="wp-preview" id="wp-preview" value="" />
-                                    </div>
-
                                     <div class="clear"></div>
                                 </div>
                                 <div id="misc-publishing-actions">
 
-                                    <div class="misc-pub-section"><label for="post_status">ステータス:</label>
-                                        <span id="post-status-display">
-                                            下書き</span>
-                                        <a href="#post_status" class="edit-post-status hide-if-no-js" tabindex='4'>編集</a>
-
-                                        <div id="post-status-select" class="hide-if-js">
-                                            <input type="hidden" name="hidden_post_status" id="hidden_post_status" value="draft" />
-                                            <select name='post_status' id='post_status' tabindex='4'>
-                                                <option value='pending'>レビュー待ち</option>
-                                                <option selected='selected' value='draft'>下書き</option>
-                                            </select>
-                                            <a href="#post_status" class="save-post-status hide-if-no-js button">OK</a>
-                                            <a href="#post_status" class="cancel-post-status hide-if-no-js">キャンセル</a>
-                                        </div>
-
-                                    </div>
-                                    <div class="misc-pub-section " id="visibility">
-                                        公開状態: <span id="post-visibility-display">公開</span>
-                                        <a href="#visibility" class="edit-visibility hide-if-no-js">編集</a>
-
-                                        <div id="post-visibility-select" class="hide-if-js">
-                                            <input type="hidden" name="hidden_post_password" id="hidden-post-password" value="" />
-                                            <input type="checkbox" style="display:none" name="hidden_post_sticky" id="hidden-post-sticky" value="sticky"  />
-                                            <input type="hidden" name="hidden_post_visibility" id="hidden-post-visibility" value="public" />
-
-
-                                            <input type="radio" name="visibility" id="visibility-radio-public" value="public"  checked='checked' /> 
-                                            <label for="visibility-radio-public" class="selectit">公開</label><br />
-                                            <span id="sticky-span">
-                                                <input id="sticky" name="sticky" type="checkbox" value="sticky"  tabindex="4" /> 
-                                                <label for="sticky" class="selectit">この投稿を先頭に固定表示</label><br /></span>
-                                            <input type="radio" name="visibility" id="visibility-radio-password" value="password"  /> 
-                                            <label for="visibility-radio-password" class="selectit">パスワード保護</label><br />
-                                            <span id="password-span"><label for="post_password">パスワード</label> 
-                                                <input type="text" name="post_password" id="post_password" value="" /><br /></span>
-                                            <input type="radio" name="visibility" id="visibility-radio-private" value="private"  /> 
-                                            <label for="visibility-radio-private" class="selectit">非公開</label><br />
-
-                                            <p>
-                                                <a href="#visibility" class="save-post-visibility hide-if-no-js button">OK</a>
-                                                <a href="#visibility" class="cancel-post-visibility hide-if-no-js">キャンセル</a>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <div class="misc-pub-section curtime misc-pub-section-last">
-                                        <span id="timestamp">
-                                            <b>すぐに</b>公開する</span>
-                                        <a href="#edit_timestamp" class="edit-timestamp hide-if-no-js" tabindex='4'>編集</a>
-                                        <div id="timestampdiv" class="hide-if-js"><div class="timestamp-wrap">
-                                                <input type="text" id="aa" name="aa" value="2012" size="4" maxlength="4" tabindex="4" autocomplete="off" />年<select id="mm" name="mm" tabindex="4">
-                                                    <option value="01">01-1月</option>
-                                                    <option value="02">02-2月</option>
-                                                    <option value="03">03-3月</option>
-                                                    <option value="04">04-4月</option>
-                                                    <option value="05" selected="selected">05-5月</option>
-                                                    <option value="06">06-6月</option>
-                                                    <option value="07">07-7月</option>
-                                                    <option value="08">08-8月</option>
-                                                    <option value="09">09-9月</option>
-                                                    <option value="10">10-10月</option>
-                                                    <option value="11">11-11月</option>
-                                                    <option value="12">12-12月</option>
-                                                </select>
-                                                <input type="text" id="jj" name="jj" value="12" size="2" maxlength="2" tabindex="4" autocomplete="off" />日 @ 
-                                                <input type="text" id="hh" name="hh" value="16" size="2" maxlength="2" tabindex="4" autocomplete="off" /> : 
-                                                <input type="text" id="mn" name="mn" value="05" size="2" maxlength="2" tabindex="4" autocomplete="off" /></div>
-                                            <input type="hidden" id="ss" name="ss" value="15" />
-
-                                            <input type="hidden" id="hidden_mm" name="hidden_mm" value="05" />
-                                            <input type="hidden" id="cur_mm" name="cur_mm" value="05" />
-                                            <input type="hidden" id="hidden_jj" name="hidden_jj" value="12" />
-                                            <input type="hidden" id="cur_jj" name="cur_jj" value="12" />
-                                            <input type="hidden" id="hidden_aa" name="hidden_aa" value="2012" />
-                                            <input type="hidden" id="cur_aa" name="cur_aa" value="2012" />
-                                            <input type="hidden" id="hidden_hh" name="hidden_hh" value="16" />
-                                            <input type="hidden" id="cur_hh" name="cur_hh" value="16" />
-                                            <input type="hidden" id="hidden_mn" name="hidden_mn" value="05" />
-                                            <input type="hidden" id="cur_mn" name="cur_mn" value="05" />
-
-                                            <p>
-                                                <a href="#edit_timestamp" class="save-timestamp hide-if-no-js button">OK</a>
-                                                <a href="#edit_timestamp" class="cancel-timestamp hide-if-no-js">キャンセル</a>
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="clear"></div>
                             </div>
 
                             <div id="major-publishing-actions">
-                                <div id="delete-action">
-                                    <a class="submitdelete deletion" href="http://localhost/wordpress/wp-admin/post.php?post=50&amp;action=trash&amp;_wpnonce=72b2aa5d31">ゴミ箱へ移動</a></div>
 
                                 <div id="publishing-action">
                                     <img src="/includes/wp/admin/images/wpspin_light.gif" class="ajax-loading" id="ajax-loading" alt="" />

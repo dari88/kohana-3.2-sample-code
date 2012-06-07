@@ -58,7 +58,7 @@
 
             <div id="footer">
                 <p id="footer-left" class="alignleft">
-                    <span id="footer-thankyou"><a href="http://ja.wordpress.org/">WordPress</a> のご利用ありがとうございます。</span>
+                    <span id="footer-thankyou"><a href="http://kohanaframework.org/">kohanaPress</a> のご利用ありがとうございます。</span>
                 </p>
                 <p id="footer-upgrade" class="alignright">バージョン 3.3.2</p>
                 <div class="clear"></div>

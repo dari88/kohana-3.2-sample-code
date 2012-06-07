@@ -1,6 +1,4 @@
-<?php
-
-defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') OR die('No direct access allowed.');
 
 class Controller_Test12_upload extends Controller {
 
@@ -31,6 +29,7 @@ class Controller_Test12_upload extends Controller {
         $view = view::factory('test12/upload/upload');
         $view->head02 = view::factory('test12/postnew/head02');
         $view->adminmenu = view::factory('test12/postnew/adminmenu');
+        $view->adminmenu->menu = 'media';
         $view->help = view::factory('test12/postnew/help');
         $view->screen_option = view::factory('test12/postnew/screen_option');
         if ($p == 'upload') {

@@ -59,7 +59,15 @@ $prev = '前のページ';
 $next = '次のページ';
 $last = '&nbsp;>>';
 ?>
-
+<style type="text/css">
+<!--
+.pagination a {
+    border: 1px solid #CCCCCC;
+    margin: 2px;
+    padding: 0.1em 0.2em;
+}
+-->
+</style>
 <p class="pagination">
 
 	<?php if ($first_page !== FALSE): ?>

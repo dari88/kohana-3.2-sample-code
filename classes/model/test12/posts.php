@@ -1,6 +1,4 @@
-<?php
-
-defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') OR die('No direct access allowed.');
 
 class Model_Test12_posts extends Model {
 
@@ -45,6 +43,45 @@ class Model_Test12_posts extends Model {
         return $id;
     }
 
+    public function editpost($id, $array) {
+        $date = Date::formatted_time();
+        $array['post_modified'] = $date;
+        $array['post_modified_gmt'] = $date;
+        $update = DB::update('wp332_posts')
+                ->where('ID', '=', $id)
+                ->set($array);
+        return $update->execute();
+    }
+
+    public function selectblogs($array) {
+        $select = DB::select('*')
+                ->order_by('ID', 'DESC')
+                ->from('wp332_posts');
+        if ($array) {
+            $select->where_open();
+            foreach ($array as $key => $value) {
+                $select->and_where($key, '=', $value);
+            }
+            $select->where_close();
+        }
+
+        return $select->execute();
+    }
+    
+    public function getpost($id, $c) {
+        $select = DB::select('ID', $c)
+                ->where('ID', '=', $id)
+                ->from('wp332_posts')
+                ->execute();
+        return $select->get($c);
+    }  
+    
+    public function deletepost($id) {
+        $delete = DB::delete('wp332_posts')
+                ->where('id', '=', $id);
+        return $delete->execute();
+    }
+    
     public function postnewimages($array) {
 
         $date = Date::formatted_time();
@@ -75,21 +112,6 @@ class Model_Test12_posts extends Model {
                 ->execute();
 
         return $id;
-    }
-
-    public function selectblogs($array) {
-        $select = DB::select('*')
-                ->order_by('ID', 'DESC')
-                ->from('wp332_posts');
-        if ($array) {
-            $select->where_open();
-            foreach ($array as $key => $value) {
-                $select->and_where($key, '=', $value);
-            }
-            $select->where_close();
-        }
-
-        return $select->execute();
     }
 
     public function selectimage($array) {

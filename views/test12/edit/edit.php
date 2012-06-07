@@ -36,10 +36,10 @@
 
                         <div class="wrap columns-2">
 
-                            <div id="icon-upload" class="icon32"><br /></div>
-                            <h2>メディアライブラリ <a href="/kohana/test12_upload?p=upload" class="add-new-h2">新規追加</a> </h2>
+                            <div id="icon-edit" class="icon32"><br /></div>
+                            <h2>投稿 <a href="/kohana/test12_postnew" class="add-new-h2">新規追加</a> </h2>
 
-                            <?php echo $media ?>
+                            <?php echo $posts ?>
 
                         </div>
 
