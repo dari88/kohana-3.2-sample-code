@@ -1,6 +1,4 @@
-<?php
-
-defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') OR die('No direct access allowed.');
 
 class Controller_Test12_postnew extends Controller {
 
@@ -35,11 +33,11 @@ class Controller_Test12_postnew extends Controller {
             if ($post->check()) {
 
                 $post_time = Cookie::get('post_time');
-                
-                if (!$post_time OR time() - $post_time > 60) {
-                    
+                if (!$post_time)
+                    die('Invalid!');
+                $interval = $id ? 10 : 60;
+                if (time() - $post_time > $interval) {
                     Cookie::set('post_time', time());
-                    
                     $config = HTMLPurifier_Config::createDefault();
                     $purifier = new HTMLPurifier($config);
                     $content = $purifier->purify($posts['content']);
@@ -59,9 +57,8 @@ class Controller_Test12_postnew extends Controller {
 
                     $model->postnew($post_array);
                     $this->request->redirect('test12');
-                    
                 } else {
-                    $errors[] = '60s rule: しばらく待ってから投稿して下さい';
+                    $errors[] = $interval.'sec rule: しばらく待ってから投稿して下さい';
                     $post_title = HTML::chars($posts['post_title']);
                     $content = $posts['content'];
                     $id = $posts['post_ID'];
@@ -73,6 +70,7 @@ class Controller_Test12_postnew extends Controller {
                 $id = $posts['post_ID'];
             }
         } else {
+            Cookie::set('post_time', time());
             if (isset($_GET['action']) AND $_GET['action'] == 'edit') {
                 isset($_GET['id']) ? $id = $_GET['id'] : die('Invalid!');
                 $array = array('ID' => $id);

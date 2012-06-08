@@ -1,6 +1,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<title>WordPress | Just another WordPress site</title>
+<title>kohanaPress | Just another WordPress site</title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="/kohana/loadcss?dir=rtl&load=twentyeleven" />
 <link rel="pingback" href="http://localhost/wordpress/xmlrpc.php" />
