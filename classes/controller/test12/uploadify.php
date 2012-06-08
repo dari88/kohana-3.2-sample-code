@@ -45,18 +45,19 @@ class Controller_Test12_uploadify extends Controller {
             $imagick->writeImage($thumbnail_1);
             $imagick->Destroy();
 
-
             $loginuser = substr($_REQUEST['folder'], 1);
             $user_ID = Auth_Wplogin::instance()->user_ID($loginuser);
             if (!$loginuser) {
                 throw new Exception('Login!');
             }
+            
             $tn1_img = file_get_contents($thumbnail_1);
             $tn2_img = file_get_contents($thumbnail_2);
             $org_img = file_get_contents($targetFile);
 
             $post_array = array(
                 'post_author' => $user_ID,
+                'data_size' => $size,
                 'extention' => $ext,
                 'org_name' => $filename,
                 'uq_name' => $uniq_filename . '.' . $ext,
@@ -67,7 +68,15 @@ class Controller_Test12_uploadify extends Controller {
                 'org_img' => $org_img,
             );
 
+            $dblimit = 20*1024*1024; // user's database limit.
+
             $model = Model::factory('test12_posts');
+            $totalsize = $model->gettotalimagesize($user_ID);
+
+            if ($totalsize > $dblimit) {
+                throw new Exception('DB limit!');
+            }
+            
             $model->postnewimages($post_array);
 
             unlink($thumbnail_1);

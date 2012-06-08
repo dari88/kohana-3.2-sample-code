@@ -14,7 +14,8 @@
                     'folder'    : <?php echo "'/".$folder."'" ?>,
                     'ID'        : '1',
                     'queueID'   : 'queue',
-                    'fileDesc'  : '',
+                    'fileExt'   : '*.jpg;*.gif;*.png',
+                    'fileDesc'  : 'Image Files',
                     'sizeLimit' : 10240000,
                     'multi'     : true,
                     'auto'      : false
@@ -25,7 +26,7 @@
         <title>Uploadifyを使って複数の画像をアップロードする</title>
     </head>
     <body>
-        <a>ファイルをアップロードして下さい</a>
+        <p>ファイルをアップロードして下さい （DB残量： <?php echo $remaining ?> MB）</p>
         <div style="background-color: #505050; height: 200px; margin-bottom: 10px; 
              padding:10px; overflow: auto; width: 400px;" id="queue"></div>
         <input type="file" id="file_upload" name="file_upload" /><br />

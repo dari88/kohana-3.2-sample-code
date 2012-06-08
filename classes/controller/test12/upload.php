@@ -26,6 +26,13 @@ class Controller_Test12_upload extends Controller {
             }
         }
 
+        $dblimit = 20*1024*1024; // user's database limit.
+        $model = Model::factory('test12_posts');
+        $totalsize = $model->gettotalimagesize($user_ID);
+        $remaining = (int) (($dblimit - $totalsize) / 1024 / 1024);
+        if ($remaining < 0)
+            $remaining = 0;
+
         $view = view::factory('test12/upload/upload');
         $view->head02 = view::factory('test12/postnew/head02');
         $view->adminmenu = view::factory('test12/postnew/adminmenu');
@@ -35,6 +42,7 @@ class Controller_Test12_upload extends Controller {
         if ($p == 'upload') {
             $view->media = view::factory('test12/postnew/uploadify');
             $view->media->folder = $loginuser;
+            $view->media->remaining = $remaining;
         } else {
             $view->media = Contents_Upload::images($page, $user_ID);
         }

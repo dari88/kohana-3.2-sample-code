@@ -67,21 +67,21 @@ class Model_Test12_posts extends Model {
 
         return $select->execute();
     }
-    
+
     public function getpost($id, $c) {
         $select = DB::select('ID', $c)
                 ->where('ID', '=', $id)
                 ->from('wp332_posts')
                 ->execute();
         return $select->get($c);
-    }  
-    
+    }
+
     public function deletepost($id) {
         $delete = DB::delete('wp332_posts')
                 ->where('id', '=', $id);
         return $delete->execute();
     }
-    
+
     public function postnewimages($array) {
 
         $date = Date::formatted_time();
@@ -90,6 +90,7 @@ class Model_Test12_posts extends Model {
             'post_author' => '0',
             'post_date' => $date,
             'post_date_gmt' => $date,
+            'data_size' => '0',
             'extention' => '',
             'org_name' => '',
             'uq_name' => '',
@@ -115,7 +116,7 @@ class Model_Test12_posts extends Model {
     }
 
     public function selectimage($array) {
-        $select = DB::select('ID', 'post_author', 'post_date', 'post_date_gmt', 'extention', 'org_name', 'uq_name', 'tn1_name', 'tn2_name', 'title', 'description')
+        $select = DB::select('ID', 'post_author', 'post_date', 'post_date_gmt', 'data_size', 'extention', 'org_name', 'uq_name', 'tn1_name', 'tn2_name', 'title', 'description')
                 ->order_by('ID', 'DESC')
                 ->from('wp332_post_images');
         if ($array) {
@@ -135,6 +136,13 @@ class Model_Test12_posts extends Model {
                 ->from('wp332_post_images')
                 ->execute();
         return $select->get($c);
+    }
+
+    public function gettotalimagesize($post_author) {
+        $sql = "select sum(data_size) from wp332_post_images where post_author = " . $post_author;
+        $query = DB::query(Database::SELECT, $sql)
+                ->execute();
+        return $query->get('sum(data_size)');
     }
 
     public function deleteimage($id) {

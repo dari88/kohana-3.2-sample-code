@@ -1,4 +1,6 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php
+
+defined('SYSPATH') OR die('No direct access allowed.');
 
 class Controller_Test12_postnew extends Controller {
 
@@ -32,31 +34,44 @@ class Controller_Test12_postnew extends Controller {
 
             if ($post->check()) {
 
-                $config = HTMLPurifier_Config::createDefault();
-                $purifier = new HTMLPurifier($config);
-                $content = $purifier->purify($posts['content']);
+                $post_time = Cookie::get('post_time');
+                
+                if (!$post_time OR time() - $post_time > 60) {
+                    
+                    Cookie::set('post_time', time());
+                    
+                    $config = HTMLPurifier_Config::createDefault();
+                    $purifier = new HTMLPurifier($config);
+                    $content = $purifier->purify($posts['content']);
 
-                $post_array = array(
-                    'post_author' => $user_ID,
-                    'post_title' => $posts['post_title'],
-                    'post_content' => $content
-                );
-                $post_array['post_status'] = isset($_POST['save']) ? 'draft' : 'publish';
+                    $post_array = array(
+                        'post_author' => $user_ID,
+                        'post_title' => $posts['post_title'],
+                        'post_content' => $content
+                    );
+                    $post_array['post_status'] = isset($_POST['save']) ? 'draft' : 'publish';
 
-                if ($id) {
-                    $post_array = $post_array + $select;
-                    $model->editpost($id, $post_array);
-                    $this->request->redirect('test12?p=' . $id);
+                    if ($id) {
+                        $post_array = $post_array + $select;
+                        $model->editpost($id, $post_array);
+                        $this->request->redirect('test12?p=' . $id);
+                    }
+
+                    $model->postnew($post_array);
+                    $this->request->redirect('test12');
+                    
+                } else {
+                    $errors[] = '60s rule: しばらく待ってから投稿して下さい';
+                    $post_title = HTML::chars($posts['post_title']);
+                    $content = $posts['content'];
+                    $id = $posts['post_ID'];
                 }
-
-                $model->postnew($post_array);
-                $this->request->redirect('test12');
+            } else {
+                $errors = $post->errors('test12');
+                $post_title = HTML::chars($posts['post_title']);
+                $content = $posts['content'];
+                $id = $posts['post_ID'];
             }
-
-            $errors = $post->errors('test12');
-            $post_title = HTML::chars($posts['post_title']);
-            $content = $posts['content'];
-            $id = $posts['post_ID'];
         } else {
             if (isset($_GET['action']) AND $_GET['action'] == 'edit') {
                 isset($_GET['id']) ? $id = $_GET['id'] : die('Invalid!');
