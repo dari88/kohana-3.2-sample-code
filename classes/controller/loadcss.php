@@ -28,7 +28,7 @@ class Controller_Loadcss extends Controller {
                 continue;
             }
 
-            $path = 'c:/xampp/htdocs' . $config[$handle];
+            $path = $_SERVER['DOCUMENT_ROOT'] . $config[$handle];
             $pathlist .= $path . "\n";
             $content = file_get_contents($path) . "\n";
 

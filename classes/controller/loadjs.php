@@ -27,7 +27,7 @@ class Controller_Loadjs extends Controller {
                 continue;
             }
 
-            $path = 'c:/xampp/htdocs' . $config[$handle];
+            $path = $_SERVER['DOCUMENT_ROOT'] . $config[$handle];
             $pathlist .= $path . "\n";
             $out .= file_get_contents($path) . "\n";
         }
