@@ -39,11 +39,11 @@ var thickboxL10n = {
     "next":"次へ >",
     "prev":"< 前へ",
     "image":"画像",
-    "of":"\/",
+    "of":"/",
     "close":"閉じる",
     "noiframes":"この機能では iframe が必要です。現在 iframe を無効化しているか、対応していないブラウザーを使っているようです。",
-    "loadingAnimation":"http:\/\/localhost\/includes\/wp\/includes\/js\/thickbox\/loadingAnimation.gif",
-    "closeImage":"http:\/\/localhost\/includes\/wp\/includes\/js\/thickbox\/tb-close.png"
+    "loadingAnimation":"/includes/wp/includes/js/thickbox/loadingAnimation.gif",
+    "closeImage":"/includes/wp/includes/js/thickbox/tb-close.png"
 };
 
 var quicktagsL10n = {
@@ -60,7 +60,7 @@ var quicktagsL10n = {
 };
 
 var wpLinkL10n = {
-    "title":"リンクの挿入\/編集",
+    "title":"リンクの挿入/編集",
     "update":"更新",
     "save":"リンク追加",
     "noTitle":"(タイトルなし)",
