@@ -139,10 +139,11 @@ class Model_Test12_posts extends Model {
     }
 
     public function gettotalimagesize($post_author) {
-        $sql = "select sum(data_size) from wp332_post_images where post_author = " . $post_author;
-        $query = DB::query(Database::SELECT, $sql)
+        $query = DB::select(array('sum("data_size")', 'total_size'))
+                ->from('wp332_post_images')
+                ->where('post_author', '=', $post_author)
                 ->execute();
-        return $query->get('sum(data_size)');
+        return $query->get('total_size');
     }
 
     public function deleteimage($id) {
