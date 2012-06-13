@@ -7,7 +7,6 @@ class Model_Test12_register extends Model {
                 ->values($array)
                 ->table('wp332_users')
                 ->execute();
-
         return $id;
     }
 
@@ -17,11 +16,7 @@ class Model_Test12_register extends Model {
                 ->from('wp332_users')
                 ->where('user_login', '=', $user_login)
                 ->execute();
-
-        $result = $users->get('user_login', FALSE);
-        if ($result)
-            return FALSE;
-        return TRUE;
+        return !$users->get('user_login', FALSE);
     }
 
     public function unique_email($user_email) {
@@ -30,11 +25,7 @@ class Model_Test12_register extends Model {
                 ->from('wp332_users')
                 ->where('user_email', '=', $user_email)
                 ->execute();
-
-        $result = $emails->get('user_email', FALSE);
-        if ($result)
-            return FALSE;
-        return TRUE;
+        return !$emails->get('user_email', FALSE);
     }
 
 }
