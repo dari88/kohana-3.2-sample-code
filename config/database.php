@@ -2,14 +2,14 @@
 
 return array
 (
-	'kohana' => array
+	'default' => array
 	(
 		'type'       => 'mysql',
 		'connection' => array(
 			'hostname'   => 'localhost',
 			'database'   => 'kohana',
-			'username'   => 'MySQLのユーザー名',
-			'password'   => 'パスワード',
+			'username'   => 'MySQL UserName',
+			'password'   => 'Password',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
