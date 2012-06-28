@@ -106,6 +106,7 @@ Kohana::modules(array(
 	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+    'zend'       => MODPATH.'zend',       // Zend Framework
 	));
 
 /**
@@ -121,11 +122,11 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 /**
 * Enable Zend Framework autoloading
 */
-if ($path = Kohana::find_file('vendor', 'Zend/Loader')) {
-    ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . dirname(dirname($path)));
-    require_once 'Zend/Loader/Autoloader.php';
-    Zend_Loader_Autoloader::getInstance();
-}
+//if ($path = Kohana::find_file('vendor', 'Zend/Loader')) {
+//    ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . dirname(dirname($path)));
+//    require_once 'Zend/Loader/Autoloader.php';
+//    Zend_Loader_Autoloader::getInstance();
+//}
 
 /**
 * Enable HTMLpurifier autoloading
