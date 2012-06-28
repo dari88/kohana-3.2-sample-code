@@ -2,6 +2,14 @@ kohanaPress
 ===========
 **The kohanaPress is WordPress style blog system driven by kohana.**
 Demo site: http://bit.ly/KSJ8Hc
+
+V1.4 2012.06.28
+---------------
+- I made modifications to Zend Paginator, to be modules of kohana.
+- Similarly I have also modified Zend Mail.
+- application/vendor/Zend folder is no longer required.
+- Move kohana-3.2-sample-code/zend folder under kohana/modules/ folder.
+- bootstrap.php was modified.
  
 V1.3 2012.06.07
 ---------------
