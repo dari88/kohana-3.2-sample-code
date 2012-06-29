@@ -69,7 +69,7 @@ class Zend_Mime_Decode
         // no more parts, find end boundary
         $p = strpos($body, '--' . $boundary . '--', $start);
         if ($p===false) {
-            throw new Zend_Exception('Not a valid Mime Message: End Missing');
+            throw new Exception('Not a valid Mime Message: End Missing');
         }
 
         // the remaining part also needs to be parsed:
@@ -200,7 +200,7 @@ class Zend_Mime_Decode
 
         $field = $firstName . '=' . $field;
         if (!preg_match_all('%([^=\s]+)\s*=\s*("[^"]+"|[^;]+)(;\s*|$)%', $field, $matches)) {
-            throw new Zend_Exception('not a valid header field');
+            throw new Exception('not a valid header field');
         }
 
         if ($wantedPart) {
