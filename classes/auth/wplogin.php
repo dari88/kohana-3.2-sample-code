@@ -9,7 +9,7 @@ class Auth_Wplogin extends Auth {
             $password = $this->hash($password);
         }
 
-        $dbpassword = parent::instance()->password($username);
+        $dbpassword = $this->password($username);
 
         if ($dbpassword == $password) {
             $this->complete_login($username);
@@ -38,7 +38,7 @@ class Auth_Wplogin extends Auth {
         if (!$username)
             return FALSE;
 
-        $dbpassword = parent::instance()->password($username);
+        $dbpassword = $this->password($username);
         if (!$dbpassword)
             return FALSE;
 
